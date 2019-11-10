@@ -40,33 +40,31 @@ class AuthPage extends Component {
     }
 
     _handleLink(routeName) {
-        NavigationUtil.goPage(null, routeName);
-        // this.setState({
-        //     isNext: true
-        // }, () => {
-        //     this.timer = setInterval(() => {
-        //         if (this.currProgress >= 1) {
-        //             clearInterval(this.timer);
-        //             NavigationUtil.goPage(null, routeName);
+        this.setState({
+            isNext: true
+        }, () => {
+            this.timer = setInterval(() => {
+                if (this.currProgress >= 1) {
+                    clearInterval(this.timer);
+                    NavigationUtil.goPage(null, routeName);
 
-        //             this.currProgress = 0;
-        //             this.currBuffer = 0;
-        //             this.setState({
-        //                 progress: 0,
-        //                 isNext: false
-        //             });
-        //         } else {
-        //             this.currProgress += 0.1;
-        //             this.refs.progressBar.progress = this.currProgress;
-        //         }
-        //     }, 300);
-        // });
+                    this.currProgress = 0;
+                    this.currBuffer = 0;
+                    this.setState({
+                        progress: 0,
+                        isNext: false
+                    });
+                } else {
+                    this.currProgress += 0.1;
+                    this.refs.progressBar.progress = this.currProgress;
+                }
+            }, 300);
+        });
     }
 
     render() {
         NavigationUtil.navigation = this.props.navigation;
         let navigationBar = <NavigationBar
-            statusBar={{ barStyle: 'default' }}
             style={{ backgroundColor: 'transparent' }}
         />;
         return (

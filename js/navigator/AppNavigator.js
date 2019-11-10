@@ -1,4 +1,3 @@
-import { Platform } from 'react-native';
 import { createAppContainer, createStackNavigator, createSwitchNavigator } from 'react-navigation';
 import { connect } from 'react-redux';
 import { createReactNavigationReduxMiddleware, createReduxContainer } from 'react-navigation-redux-helpers';
@@ -14,27 +13,15 @@ export let rootComponent = 'AuthLoading';
 let AuthStack = createStackNavigator({
     Auth: {
         screen: AuthPage,
-        navigationOptions: {
-            header: null,
-        }
     },
     Login: {
         screen: LoginPage,
-        navigationOptions: {
-            header: null,
-        }
     },
     Register: {
         screen: RegisterPage,
-        navigationOptions: {
-            header: null,
-        }
     },
     Confirm: {
         screen: ConfirmPage,
-        navigationOptions: {
-            header: null,
-        }
     }
 });
 
@@ -50,8 +37,8 @@ let AppStack = createStackNavigator({
 export let RootNavigator = createAppContainer(createSwitchNavigator(
     {
         AuthLoading: AuthLoadingPage,
-        AppStack: AppStack,
         AuthStack: AuthStack,
+        AppStack: AppStack,
     },
     {
         initialRouteName: 'AuthLoading',

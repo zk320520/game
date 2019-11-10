@@ -153,7 +153,7 @@ class SafePage extends Component {
             <ImageBackground style={{ flex: 1, backgroundColor: '#000', }} source={require('../../static/bg_register.png')}>
                 <SafeAreaView style={{ flex: 1, }}>
                     {navigationBar}
-                    <View style={[styles.container, { width: Dimensions.get('window').width - 50, alignSelf: 'center', }]}>
+                    <View style={[styles.container, {  alignSelf: 'center', }]}>
                         <Tabs
                             tabs={tabs}
                             swipeable={false}
@@ -314,25 +314,27 @@ class SafePage extends Component {
                                     <Text style={styles.confirmText}>变更帐号验证</Text>
                                 </TouchableOpacity>
                             </View>
-                            <View style={{ height: 250, justifyContent: 'center', }}>
-                                <View style={{ alignItems: 'center', paddingLeft: 20, paddingRight: 20, paddingTop: 10, paddingBottom: 10, backgroundColor: '#fff', borderRadius: 5, }}>
-                                    <Text style={{ color: '#AC7508', fontSize: 16, fontWeight: 'bold', alignSelf: 'flex-start', marginBottom: 20, }}>密码找回</Text>
-                                    <View style={[styles.inputWraper, { borderBottomColor: '#AC7508' }]}>
-                                        <TextInput autoCapitalize={'none'} secureTextEntry={true} style={[styles.input, { color: '#333' }]} value={this.state.Password} onChangeText={text => this.setState({ Password: text })} placeholder={'请输入目前密码'} placeholderTextColor={'#D9D7D1'} />
-                                    </View>
-                                    <View style={[styles.inputWraper, { borderBottomColor: '#AC7508' }]}>
-                                        <TextInput autoCapitalize={'none'} secureTextEntry={true} style={[styles.input, { color: '#333' }]} value={this.state.ChangePassword} onChangeText={text => this.setState({ ChangePassword: text })} placeholder={'输入欲更改密码'} placeholderTextColor={'#D9D7D1'} />
-                                    </View>
-                                    <View style={[styles.inputWraper, { borderBottomColor: '#AC7508' }]}>
-                                        <TextInput autoCapitalize={'none'} secureTextEntry={true} style={[styles.input, { color: '#333' }]} value={this.state.ConfirmPassword} onChangeText={text => this.setState({ ConfirmPassword: text })} placeholder={'确认更改密码'} placeholderTextColor={'#D9D7D1'} />
-                                    </View>
-                                    <TouchableOpacity
-                                        style={{ width: 108, height: 28, backgroundColor: '#AC7508', borderRadius: 5, display: 'flex', justifyContent: 'center', alignItems: 'center' }}
+                            <View style={styles.tabContent}>
+                                <View style={{ width: 336, height: 250, }}>
+                                    <View style={{ alignItems: 'center', paddingHorizontal: 20, paddingVertical: 10, backgroundColor: '#fff', borderRadius: 5, }}>
+                                        <Text style={{ color: '#AC7508', fontSize: 16, fontWeight: 'bold', alignSelf: 'flex-start', marginBottom: 20, }}>密码找回</Text>
+                                        <View style={[styles.inputWraper, { borderBottomColor: '#AC7508' }]}>
+                                            <TextInput autoCapitalize={'none'} secureTextEntry={true} style={[styles.input, { color: '#333' }]} value={this.state.Password} onChangeText={text => this.setState({ Password: text })} placeholder={'请输入目前密码'} placeholderTextColor={'#D9D7D1'} />
+                                        </View>
+                                        <View style={[styles.inputWraper, { borderBottomColor: '#AC7508' }]}>
+                                            <TextInput autoCapitalize={'none'} secureTextEntry={true} style={[styles.input, { color: '#333' }]} value={this.state.ChangePassword} onChangeText={text => this.setState({ ChangePassword: text })} placeholder={'输入欲更改密码'} placeholderTextColor={'#D9D7D1'} />
+                                        </View>
+                                        <View style={[styles.inputWraper, { borderBottomColor: '#AC7508' }]}>
+                                            <TextInput autoCapitalize={'none'} secureTextEntry={true} style={[styles.input, { color: '#333' }]} value={this.state.ConfirmPassword} onChangeText={text => this.setState({ ConfirmPassword: text })} placeholder={'确认更改密码'} placeholderTextColor={'#D9D7D1'} />
+                                        </View>
+                                        <TouchableOpacity
+                                            style={{ width: 108, height: 28, backgroundColor: '#AC7508', borderRadius: 5, display: 'flex', justifyContent: 'center', alignItems: 'center' }}
 
-                                        onPress={() => this._handleConfirmPwd()}
-                                    >
-                                        <Text style={{ color: '#fff', fontSize: 12, fontWeight: 'bold' }}>确认重设密码</Text>
-                                    </TouchableOpacity>
+                                            onPress={() => this._handleConfirmPwd()}
+                                        >
+                                            <Text style={{ color: '#fff', fontSize: 12, fontWeight: 'bold' }}>确认重设密码</Text>
+                                        </TouchableOpacity>
+                                    </View>
                                 </View>
                             </View>
                         </Tabs>
@@ -410,6 +412,7 @@ const styles = StyleSheet.create({
         marginTop: 20,
     },
     tabBarTextStyle: {
+        alignSelf: 'center',
         color: '#fff',
         fontSize: 16,
         fontWeight: 'bold',
@@ -423,6 +426,7 @@ const styles = StyleSheet.create({
         flex: 1,
         display: 'flex',
         alignItems: 'center',
+        justifyContent: 'center',
     },
     inputWraper: {
         width: 290,

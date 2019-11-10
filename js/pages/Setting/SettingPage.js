@@ -63,15 +63,15 @@ class SettingPage extends Component {
     render() {
         NavigationUtil.navigation = this.props.navigation;
 
-        // let navigationBar = <NavigationBar
-        //     statusBar={{ barStyle: 'default' }}
-        //     style={{ backgroundColor: 'transparent' }}
-        // />;
+        let navigationBar = <NavigationBar
+            statusBar={{ barStyle: 'default' }}
+            style={{ backgroundColor: 'transparent' }}
+        />;
         return (
             <ImageBackground style={{ flex: 1, }} source={require('../../static/bg.png')}>
                 <SafeAreaView style={{ flex: 1, }}>
                     <MatchCarousel gameList={this.props.gameList} />
-                    <ScrollView style={{}}>
+                    <ScrollView>
                         <ImageBackground source={this.props.userInfo.Avatar ? this.props.userInfo.Avatar : require('../../static/bg_user.png')} style={styles.useCard}>
                             <Image style={styles.avatar} source={require('../../static/default_avatar.png')} />
                             <View style={styles.userInfo}>

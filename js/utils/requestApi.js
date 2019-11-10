@@ -22,7 +22,7 @@ export default class requestApi {
                 url += '&' + paramsArray.join('&')
             }
         }
-       
+
 
         fetch(url.indexOf('http') === -1 ? baseUrl + url : url, {
             method: 'GET',
@@ -70,14 +70,10 @@ export default class requestApi {
                 return response.json();
             }
         }).then(json => {
-            if (json.data) {
-                if (json.code == 200) {
-                    callback(json.data);
-                } else {
-                    Toast.offline(json.message);
-                }
+            if (json.code == 200) {
+                callback(json.data);
             } else {
-                callback(json);
+                Toast.offline(json.message);
             }
         }).catch(error => {
             console.log("netword error", error);

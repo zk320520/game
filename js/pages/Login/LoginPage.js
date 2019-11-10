@@ -10,6 +10,10 @@ import actions from '../../action/index';
 
 let cutDown = null;
 class LoginPage extends Component {
+    static navigationOptions = {
+        header: null
+    };
+    
     constructor(props) {
         super(props);
         this.state = {

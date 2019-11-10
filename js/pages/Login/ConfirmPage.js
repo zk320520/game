@@ -11,6 +11,10 @@ import { requestApi, bank, chinaBank } from '../../utils/index';
 import actions from '../../action/index';
 
 class ConfirmPage extends Component {
+    static navigationOptions = {
+        header: null
+    };
+    
     constructor(props) {
         super(props);
         this.state = {
