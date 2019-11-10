@@ -65,7 +65,7 @@ class LoginPage extends Component {
             onLoginSuccess(result);
 
             Portal.remove(key);
-            this.props.navigation.navigate('Home');
+            this.props.navigation.navigate('AppStack');
         }, () => {
             Portal.remove(key);
         });

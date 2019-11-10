@@ -153,7 +153,7 @@ class SafePage extends Component {
             <ImageBackground style={{ flex: 1, backgroundColor: '#000', }} source={require('../../static/bg_register.png')}>
                 <SafeAreaView style={{ flex: 1, }}>
                     {navigationBar}
-                    <View style={[styles.container, {  alignSelf: 'center', }]}>
+                    <View style={[styles.container, { }]}>
                         <Tabs
                             tabs={tabs}
                             swipeable={false}
@@ -165,12 +165,12 @@ class SafePage extends Component {
                                 <RadioForm
                                     formHorizontal={true}
                                     animation={false}
-                                    style={{ marginVertical: 25, }}
+                                    style={{ marginTop: 50, marginBottom: 25, }}
                                 >
                                     {
                                         radioProps.map((obj, i) => {
                                             return (
-                                                <RadioButton labelHorizontal={true} key={i} style={{ marginHorizontal: 25, }}>
+                                                <RadioButton labelHorizontal={true} key={i} style={{ marginHorizontal: 50, }}>
                                                     <RadioButtonInput
                                                         obj={obj}
                                                         index={i}
@@ -308,14 +308,13 @@ class SafePage extends Component {
                                 </View>
                                 <TouchableOpacity
                                     style={styles.confirm}
-
                                     onPress={() => this._handleConfirmAccount()}
                                 >
                                     <Text style={styles.confirmText}>变更帐号验证</Text>
                                 </TouchableOpacity>
                             </View>
-                            <View style={styles.tabContent}>
-                                <View style={{ width: 336, height: 250, }}>
+                            <View style={[styles.tabContent, { justifyContent: 'center' }]}>
+                                <View style={{ width: 336, height: 250,  }}>
                                     <View style={{ alignItems: 'center', paddingHorizontal: 20, paddingVertical: 10, backgroundColor: '#fff', borderRadius: 5, }}>
                                         <Text style={{ color: '#AC7508', fontSize: 16, fontWeight: 'bold', alignSelf: 'flex-start', marginBottom: 20, }}>密码找回</Text>
                                         <View style={[styles.inputWraper, { borderBottomColor: '#AC7508' }]}>
@@ -412,21 +411,20 @@ const styles = StyleSheet.create({
         marginTop: 20,
     },
     tabBarTextStyle: {
-        alignSelf: 'center',
         color: '#fff',
         fontSize: 16,
         fontWeight: 'bold',
-        width: 100,
     },
     tabBarUnderlineStyle: {
         height: 1,
         backgroundColor: '#fff',
+        width: 100,
+        marginLeft: 50,
     },
     tabContent: {
         flex: 1,
         display: 'flex',
         alignItems: 'center',
-        justifyContent: 'center',
     },
     inputWraper: {
         width: 290,

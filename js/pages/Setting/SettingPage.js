@@ -48,10 +48,10 @@ class SettingPage extends Component {
         }[type]);
     }
 
-    async _handleLoginOut() {
-        await AsyncStorage.clear();
+    _handleLoginOut() {
+        this.props.navigation.navigate('AuthStack');
         this.props.onLoginOut();
-        NavigationUtil.goPage(null, 'Auth');
+        AsyncStorage.clear();
     }
 
     _handleCopy() {

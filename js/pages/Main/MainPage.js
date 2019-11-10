@@ -58,6 +58,7 @@ class MainPage extends Component {
             this.setState({
                 GameList: result
             }, () => {
+                console.log(result);
                 this.props.onGameListSuccess(result);
             });
         });

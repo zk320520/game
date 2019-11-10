@@ -71,7 +71,7 @@ class MatchManagerPage extends Component {
         requestApi.postJson('admin/setAvailableBetGame', {
             Uid: this.props.userInfo.Uid,
             gameId: obj.gameID,
-            Available: !obj.Available
+            Available: obj.Available
         }, {
             authorization: this.props.userInfo.token
         }, result => {

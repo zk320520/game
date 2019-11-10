@@ -58,7 +58,7 @@ class ConfirmPage extends Component {
 
             onRegisterSuccess(result);
             Portal.remove(key);
-            navigation.navigate('Home');
+            navigation.navigate('AppStack');
         });
     }
 

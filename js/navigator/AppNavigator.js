@@ -34,7 +34,7 @@ let AppStack = createStackNavigator({
     },
 });
 
-export let RootNavigator = createAppContainer(createSwitchNavigator(
+export let RootNavigator = createSwitchNavigator(
     {
         AuthLoading: AuthLoadingPage,
         AuthStack: AuthStack,
@@ -43,7 +43,7 @@ export let RootNavigator = createAppContainer(createSwitchNavigator(
     {
         initialRouteName: 'AuthLoading',
     }
-));
+);
 
 export let middleware = createReactNavigationReduxMiddleware(
     state => state.nav,
